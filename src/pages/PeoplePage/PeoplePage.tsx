@@ -13,18 +13,16 @@ export const PeoplePage = () => {
     setLoading(true);
     setErrorMessage('');
 
-    setTimeout(() => {
-      getPeople()
-        .then(setPeople)
-        .catch(loadingError => {
-          setErrorMessage('Something went wrong');
+    getPeople()
+      .then(setPeople)
+      .catch(loadingError => {
+        setErrorMessage('Something went wrong');
 
-          throw loadingError;
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    });
+        throw loadingError;
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (

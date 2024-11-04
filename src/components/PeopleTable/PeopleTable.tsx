@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const PeopleTable: React.FC<Props> = ({ peopleList }) => {
-  const findAvailibleParentsSlug = (parent: Person) => {
+  const findAvailableParentsSlug = (parent: Person) => {
     return {
       mother:
         peopleList.find(person => person.name === parent.motherName)?.slug ||
@@ -39,7 +39,7 @@ export const PeopleTable: React.FC<Props> = ({ peopleList }) => {
 
           <tbody>
             {peopleList.map(person => {
-              const parentsSlugs = findAvailibleParentsSlug(person);
+              const parentsSlugs = findAvailableParentsSlug(person);
 
               return (
                 <PersonLink

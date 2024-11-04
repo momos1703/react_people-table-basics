@@ -9,7 +9,7 @@ interface Props {
   };
 }
 
-const addWomenNameClass = (sex: string) =>
+const addSexClass = (sex: string) =>
   classNames({
     'has-text-danger': sex === 'f',
   });
@@ -27,7 +27,7 @@ export const PersonLink: React.FC<Props> = ({ person, parentsSlugs }) => {
     >
       <td>
         <a
-          className={addWomenNameClass(person.sex)}
+          className={addSexClass(person.sex)}
           href={`#/people/${person.slug}`}
         >
           {person.name}
