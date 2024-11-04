@@ -14,7 +14,10 @@ const addWomenNameClass = (sex: string) =>
     'has-text-danger': sex === 'f',
   });
 
-export const PersonLink: React.FC<Props> = ({ person, parentsSlugs }) => {
+export const PersonLink: React.FC<Props> = ({
+    person,
+    parentsSlugs,
+  }) => {
   const { selectedName } = useParams();
 
   return (
@@ -44,7 +47,7 @@ export const PersonLink: React.FC<Props> = ({ person, parentsSlugs }) => {
 
         {person.motherName && parentsSlugs.mother && (
           <a
-            className="has-text-danger"
+            className='has-text-danger'
             href={`#/people/${parentsSlugs.mother}`}
           >
             {person.motherName}
