@@ -41,11 +41,14 @@ export const PeopleTable: React.FC<Props> = ({ peopleList }) => {
             {peopleList.map(person => {
               const parentsSlugs = findAvailibleParentsSlug(person);
 
-              return <PersonLink person={person} parentsSlugs={parentsSlugs} key={person.slug} />;
+              return (
+                <PersonLink
+                  key={person.slug}
+                  person={person}
+                  parentsSlugs={parentsSlugs}
+                />
+              );
             })}
-            {/* {peopleList.map(person => (
-              <PersonLink person={person} peopleList={peopleList} />
-            ))} */}
           </tbody>
         </table>
       )}
